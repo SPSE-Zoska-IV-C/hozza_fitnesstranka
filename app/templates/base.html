@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Fitness App{% endblock %}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('main.home') }}" class="logo">FitnessApp</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                <li><a href="{{ url_for('diet.diet_page') }}">Diet</a></li>
+                <li><a href="{{ url_for('exercise.exercise_page') }}">Exercise</a></li>
+                <li><a href="{{ url_for('chatbot.chatbot_page') }}">Chatbot</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FitnessApp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>
